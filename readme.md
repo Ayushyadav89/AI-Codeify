@@ -24,11 +24,6 @@
 
 ---
 
-## 📸 Demo
-
-> _Insert screenshot or gif of the app here._
-
----
 
 ## ⚙️ Installation
 
