@@ -8,6 +8,8 @@ import Markdown from 'react-markdown'
 import RingLoader from "react-spinners/RingLoader";
 
 const App = () => {
+  const key = import.meta.env.VITE_API_KEY;;
+
   const options = [
     { value: 'javascript', label: 'JavaScript' },
     { value: 'python', label: 'Python' },
@@ -36,25 +38,25 @@ const App = () => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: '#18181b', // dark background (similar to bg-zinc-900)
+      backgroundColor: '#18181b', 
       borderColor: '#3f3f46',
       color: '#fff',
       width: "100%"
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: '#18181b', // dropdown bg
+      backgroundColor: '#18181b', 
       color: '#fff',
       width: "100%"
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: '#fff',  // selected option text
+      color: '#fff',  
       width: "100%"
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isFocused ? '#27272a' : '#18181b',  // hover effect
+      backgroundColor: state.isFocused ? '#27272a' : '#18181b',  
       color: '#fff',
       cursor: 'pointer',
       // width: "30%"
@@ -66,14 +68,14 @@ const App = () => {
     }),
     placeholder: (provided) => ({
       ...provided,
-      color: '#a1a1aa',  // placeholder text color
+      color: '#a1a1aa',  
       width: "100%"
     }),
   };
 
   const [code, setCode] = useState("");
 
-  const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" }); // replace "YOUR_API_KEY" with you api key
+  const ai = new GoogleGenAI({ apiKey: key }); 
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState("");
 
